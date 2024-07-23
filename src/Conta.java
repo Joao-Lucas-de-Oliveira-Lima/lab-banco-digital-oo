@@ -1,5 +1,3 @@
-import java.math.BigDecimal;
-
 public abstract class Conta implements IConta {
 	
 	private static final int AGENCIA_PADRAO = 1;
