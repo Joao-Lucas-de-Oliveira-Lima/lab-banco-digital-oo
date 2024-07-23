@@ -1,3 +1,4 @@
+import java.math.BigDecimal;
 
 public abstract class Conta implements IConta {
 	
@@ -41,6 +42,19 @@ public abstract class Conta implements IConta {
 
 	public double getSaldo() {
 		return saldo;
+	}
+
+
+	public void pagar(String numeroDoBoleto, Double valor){
+		if(numeroDoBoleto.matches("\\d+") && numeroDoBoleto.length() == 48){
+			if(this.saldo < valor){
+				System.out.println("Saldo insuficiente");	
+			}else{
+				saldo -= valor;
+			}
+		}else{
+			System.out.println("Número de boleto inválido");
+		}
 	}
 
 	protected void imprimirInfosComuns() {
